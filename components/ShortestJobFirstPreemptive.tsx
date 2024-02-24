@@ -72,7 +72,7 @@ const ShortestJobFirstPreemptive: React.FC = () => {
   };
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container mx-auto px-4 py-8 font-inter">
       <h2 className="text-4xl font-bold mb-8">Shortest Job First Preemptive Algorithm</h2>
 
       {/* Input form */}

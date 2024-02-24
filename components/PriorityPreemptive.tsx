@@ -42,8 +42,8 @@ const PriorityPreemptive: React.FC = () => {
         currentTime++;
         completionTimes[idx] = currentTime;
         if (remainingBurstTimes[idx] === 0) {
-          sortedProcesses[idx].completionTime = currentTime;
-          sortedProcesses[idx].turnaroundTime = sortedProcesses[idx].completionTime - sortedProcesses[idx].arrivalTime;
+          sortedProcesses[idx].completionTime = completionTimes[idx];
+          sortedProcesses[idx].turnaroundTime = completionTimes[idx] - sortedProcesses[idx].arrivalTime;
           sortedProcesses[idx].waitingTime = sortedProcesses[idx].turnaroundTime - sortedProcesses[idx].burstTime;
         }
       }
@@ -72,7 +72,7 @@ const PriorityPreemptive: React.FC = () => {
   };
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container mx-auto px-4 py-8 font-inter">
       <h2 className="text-4xl font-bold mb-8">Priority Preemptive Algorithm</h2>
 
       {/* Input form */}

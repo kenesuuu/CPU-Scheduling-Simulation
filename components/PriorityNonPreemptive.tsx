@@ -18,6 +18,9 @@ const PriorityNonPreemptive: React.FC = () => {
     const sortedProcesses = [...processes].sort((a, b) => a.priority - b.priority || a.arrivalTime - b.arrivalTime);
     let currentTime = 0;
     sortedProcesses.forEach(process => {
+      if (process.arrivalTime > currentTime) {
+        currentTime = process.arrivalTime;
+      }
       process.completionTime = currentTime + process.burstTime;
       process.turnaroundTime = process.completionTime - process.arrivalTime;
       process.waitingTime = process.turnaroundTime - process.burstTime;
@@ -46,7 +49,7 @@ const PriorityNonPreemptive: React.FC = () => {
   };
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container mx-auto px-4 py-8 font-inter">
       <h2 className="text-4xl font-bold mb-8">Priority Non Preemptive Algorithm</h2>
 
       {/* Input form */}

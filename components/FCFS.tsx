@@ -46,7 +46,7 @@ const FCFS: React.FC = () => {
   };
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container mx-auto px-4 py-8 font-inter">
       <h2 className="text-4xl font-bold mb-8">First Come First Serve (FCFS) Algorithm</h2>
 
       {/* Input form */}
@@ -55,11 +55,11 @@ const FCFS: React.FC = () => {
       </button>
 
       {/* Table of processes */}
-      <div className="overflow-x-auto">
+      <div className="overflow-x-auto font-inter">
         <table className="w-full border-collapse border border-gray-300">
           <thead>
             <tr className="bg-gray-200">
-              <th className="border border-gray-300 py-2 px-4 ">Process ID</th>
+              <th className="border border-gray-300 py-2 px-4">Process ID</th>
               <th className="border border-gray-300 py-2 px-4">Arrival Time</th>
               <th className="border border-gray-300 py-2 px-4">Burst Time</th>
               <th className="border border-gray-300 py-2 px-4">Completion Time</th>
