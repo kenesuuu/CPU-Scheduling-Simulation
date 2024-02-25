@@ -8,7 +8,6 @@ import ShortestJobFirstPreemptive from '../components/ShortestJobFirstPreemptive
 const SimulationPage: React.FC = () => {
   const [selectedAlgorithm, setSelectedAlgorithm] = useState<string>('FCFS');
 
-  // Function to render selected algorithm component
   const renderSelectedAlgorithm = () => {
     switch (selectedAlgorithm) {
       case 'FCFS':
@@ -27,15 +26,15 @@ const SimulationPage: React.FC = () => {
   };
 
   return (
-    <div className="container mx-auto py-8">
-      <h1 className="text-3xl font-semibold mb-4">CPU Scheduling Simulation</h1>
+    <div className="container mx-auto px-4 py-8">
+      <h1 className="text-3xl font-semibold text-center mb-4">CPU Scheduling Simulation</h1>
       
       {/* Dropdown to select algorithm */}
       <div className="mb-4">
         <label htmlFor="algorithm" className="block font-semibold mb-2">Select Algorithm:</label>
         <select
           id="algorithm"
-          className="border border-gray-300 rounded p-2"
+          className="border border-gray-300 rounded p-2 w-full"
           value={selectedAlgorithm}
           onChange={(e) => setSelectedAlgorithm(e.target.value)}
         >
@@ -46,9 +45,9 @@ const SimulationPage: React.FC = () => {
           <option value="ShortestJobFirstPreemptive">Shortest Job First (Preemptive)</option>
         </select>
       </div>
-      
-      {/* Render selected algorithm component */}
-      {renderSelectedAlgorithm()}
+      <div className="overflow-x-auto">
+        {renderSelectedAlgorithm()}
+      </div>
     </div>
   );
 };
