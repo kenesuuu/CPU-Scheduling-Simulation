@@ -1,11 +1,19 @@
 import Link from 'next/link';
+import { useState } from 'react';
 
 const HomePage: React.FC = () => {
+  const [hovered, setHovered] = useState(false);
+
   return (
-    <div className="container mx-auto py-8 text-center font-inter">
-      <h1 className="text-3xl font-semibold text-black mb-4 font-sans">Home Page</h1>
-      <Link href="/simulation">
-        <button className="hover:underline">Go to Simulation</button>
+    <div
+      className={`h-screen flex flex-col justify-center items-center font-inter transition-background duration-500 ${hovered ? 'bg-black' : 'bg-white'}`}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+    >
+      <h1 className={`text-4xl font-semibold mb-4 ${hovered ? 'text-white' : 'text-black'}`}>Welcome to CPU Scheduling System</h1>
+      <p className={`text-lg text-center mb-8 ${hovered ? 'text-white' : 'text-black'}`}>Simplify your process management with our CPU Scheduling System. Dive into our simulations and take your understanding to the next level.</p>
+      <Link href="/simulation" passHref>
+        <button className={`py-3 px-6 rounded-md text-lg transition-colors duration-300 ${hovered ? 'bg-white text-black hover:bg-gray-200' : 'bg-black text-white hover:bg-gray-800'}`}>Go to Simulation</button>
       </Link>
     </div>
   );
